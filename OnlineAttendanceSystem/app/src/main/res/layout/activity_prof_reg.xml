@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    tools:context=".Prof_Reg_Activity">
+
+    <TextView
+        android:id="@+id/pfName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="First Name"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
+    <EditText
+        android:id="@+id/profFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/fName"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/plName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Last Name"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
+    <EditText
+        android:id="@+id/profLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/lName"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/pEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Email"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
+    <EditText
+        android:id="@+id/profEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Password"
+        android:textColor="@color/Font"
+        android:textColorHighlight="@color/Primary"
+        android:textColorLink="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="17sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:passwordToggleDrawable="@drawable/icon_selector"
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_medium"
+            android:inputType="textPassword"
+            android:textColor="@color/Primary"
+            android:textColorHighlight="@color/Primary"
+            android:textColorHint="@color/Font"
+            android:textColorLink="@color/Primary"
+            android:textCursorDrawable="@color/Primary"
+            android:textSize="20sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/pPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Phone"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
+    <EditText
+        android:id="@+id/profPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/profRegister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="25dp"
+        android:text="Register"
+        android:textStyle="bold"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@android:color/black"
+        android:background="@color/Primary"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Already Registered?"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="@color/Primary"/>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="LOGIN"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="@color/Primary"/>
+
+    </LinearLayout>
+
+</LinearLayout>

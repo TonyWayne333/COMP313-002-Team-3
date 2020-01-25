@@ -14,20 +14,23 @@
         android:layout_gravity="center"
         android:layout_marginTop="175dp"
         android:text="Welcome To"
-        android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textColor="@color/Primary"
+        android:textSize="20sp"
+        android:fontFamily="@font/autour_one" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="OAS"
-        android:textColor="@android:color/white"
-        android:textSize="35sp" />
+        android:textColor="@color/Primary"
+        android:textSize="35sp"
+        android:fontFamily="@font/autour_one" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"/>
 
 </LinearLayout>
