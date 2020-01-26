@@ -9,10 +9,22 @@
     tools:context=".Prof_Reg_Activity">
 
     <TextView
-        android:id="@+id/pfName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Professor Registration"
+        android:gravity="center"
+        android:textSize="27sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Primary"/>
+
+    <TextView
+        android:id="@+id/pfName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:text="First Name"
@@ -111,7 +123,6 @@
             android:inputType="textPassword"
             android:textColor="@color/Primary"
             android:textColorHighlight="@color/Primary"
-            android:textColorHint="@color/Font"
             android:textColorLink="@color/Primary"
             android:textCursorDrawable="@color/Primary"
             android:textSize="20sp"/>
@@ -141,7 +152,7 @@
         android:textColor="@color/Primary"
         android:textColorHint="@color/Primary"
         android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/profRegister"

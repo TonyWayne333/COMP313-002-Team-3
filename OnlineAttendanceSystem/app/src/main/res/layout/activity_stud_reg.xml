@@ -8,148 +8,111 @@
     tools:context=".Stud_Reg_Activity">
 
     <TextView
-        android:id="@+id/sfName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:text="First Name"
-        android:textSize="17sp"
+        android:text="Student Registration"
+        android:gravity="center"
+        android:textSize="30sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
-
-    <EditText
-        android:id="@+id/studFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/fName"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
-        android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/slName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Last Name"
-        android:textSize="17sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
-
-    <EditText
-        android:id="@+id/studLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/lName"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
-        android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/sId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Student ID"
-        android:textSize="17sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:textColor="@color/Primary"/>
 
     <EditText
         android:id="@+id/studId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/id"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
+        android:inputType="number"
+        android:maxLength="9"
+        android:textColor="@color/Font"
+        android:textColorHint="@color/Font"
         android:textCursorDrawable="@color/Primary"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/sEmail"
+    <EditText
+        android:id="@+id/studFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Email"
-        android:textSize="17sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:hint="@string/fName"
+        android:textColor="@color/Font"
+        android:textColorHint="@color/Font"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/studLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/lName"
+        android:textColor="@color/Font"
+        android:textColorHint="@color/Font"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/studEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/email"
+        android:hint="Email ID"
         android:inputType="textEmailAddress"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
+        android:textColor="@color/Font"
+        android:textColorHint="@color/Font"
         android:textCursorDrawable="@color/Primary"
         android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/sPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Phone"
-        android:textSize="17sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
 
     <EditText
         android:id="@+id/studPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
+        android:layout_marginTop="10dp"
         android:hint="@string/phone"
         android:inputType="phone"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
+        android:textColor="@color/Font"
+        android:textColorHint="@color/Font"
         android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
+        android:textSize="19sp" />
 
     <TextView
         android:id="@+id/sPhoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:text="Upload Your Photo (.jpg or .png)"
         android:textSize="17sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:textColor="@color/Primary"/>
 
     <Button
         android:id="@+id/studPhoto"
-        android:layout_width="200dp"
+        android:layout_width="225dp"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="23dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Upload"
+        android:text="Choose File"
         android:textStyle="bold"
         android:fontFamily="@font/quicksand_medium"
         android:textColor="@android:color/black"
@@ -160,8 +123,8 @@
         android:id="@+id/studRegister"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="23dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="25dp"
         android:text="Register"
         android:textStyle="bold"

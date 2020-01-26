@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Online Attendance System</string>
 
-    <string name="email">kevin.lopez@gmail.com</string>
+    <string name="email">abc@gmail.com</string>
     <string name="pass">**********</string>
 
-    <string name="fName">Kevin</string>
-    <string name="lName">Lopez</string>
-    <string name="id">123456789</string>
-    <string name="phone">6471234567</string>
+    <string name="fName">First Name</string>
+    <string name="lName">Last Name</string>
+    <string name="id">Student ID (e.g. 123456789)</string>
+    <string name="phone">Phone Number (e.g. 647-123-4567)</string>
 </resources>
