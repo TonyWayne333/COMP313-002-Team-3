@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@android:color/black"
     tools:context=".LoginActivity">
@@ -56,13 +56,13 @@
         android:layout_marginTop="20dp"
         android:text="Welcome Back,"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Primary"
+        android:textColor="@color/Font"
         android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+
         android:layout_marginStart="25dp"
         android:text="Sign in to continue"
         android:textSize="17sp"
@@ -79,27 +79,28 @@
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:text="Email"
             android:textSize="20sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
+            android:textColor="@color/Font"/>
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="21dp"
+
             android:layout_marginEnd="25dp"
+            android:fontFamily="@font/quicksand_medium"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:textSize="20sp"
-            android:fontFamily="@font/quicksand_medium"
             android:textColor="@color/Primary"
-            android:textColorHint="#ffffff"/>
+            android:textColorHint="@color/Primary"
+            android:textCursorDrawable="@color/Primary"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtPass"
@@ -111,21 +112,28 @@
             android:text="Password"
             android:textSize="20sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
+            android:textColor="@color/Font"/>
 
-        <EditText
-            android:id="@+id/pass"
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@android:color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginEnd="25dp"
-            android:hint="@string/pass"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"
-            android:textColorHint="#ffffff"/>
+            android:layout_height="60dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp">
+
+            <EditText
+                android:id="@+id/pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPassword"
+                android:textColor="@color/Primary"
+                android:textColorHint="@color/Primary"
+                android:textCursorDrawable="@color/Primary"
+                android:textSize="20sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/forgotPwd"
@@ -137,13 +145,13 @@
             android:text="Forgot Password ?"
             android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
+            android:textColor="@color/Font"/>
 
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="21dp"
             android:layout_marginEnd="25dp"
             android:text="Login"
@@ -170,7 +178,7 @@
             android:gravity="center"
             android:textSize="20sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
+            android:textColor="@color/Font"/>
 
         <TextView
             android:id="@+id/signup"
@@ -185,12 +193,5 @@
             android:textColor="@color/Primary"/>
 
     </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/pBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:attr/progressBarStyle"
-        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

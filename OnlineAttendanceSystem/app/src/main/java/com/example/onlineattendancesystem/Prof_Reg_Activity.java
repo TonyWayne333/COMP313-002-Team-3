@@ -16,8 +16,6 @@ public class Prof_Reg_Activity extends AppCompatActivity {
     TextView pLogin;
     Button regButton;
 
-    ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

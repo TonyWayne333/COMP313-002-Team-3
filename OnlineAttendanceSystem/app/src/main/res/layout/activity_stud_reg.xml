@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@android:color/black"
-    tools:context=".Prof_Reg_Activity">
+    tools:context=".Stud_Reg_Activity">
 
     <TextView
-        android:id="@+id/pfName"
+        android:id="@+id/sfName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:text="First Name"
@@ -21,7 +20,7 @@
         android:textColor="@color/Font"/>
 
     <EditText
-        android:id="@+id/profFirstName"
+        android:id="@+id/studFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -34,7 +33,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/plName"
+        android:id="@+id/slName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -45,7 +44,7 @@
         android:textColor="@color/Font"/>
 
     <EditText
-        android:id="@+id/profLastName"
+        android:id="@+id/studLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -58,7 +57,32 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/pEmail"
+        android:id="@+id/sId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Student ID"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
+    <EditText
+        android:id="@+id/studId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/id"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Primary"
+        android:textCursorDrawable="@color/Primary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/sEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -69,7 +93,7 @@
         android:textColor="@color/Font"/>
 
     <EditText
-        android:id="@+id/profEmail"
+        android:id="@+id/studEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -83,43 +107,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/txtPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:text="Password"
-        android:textColor="@color/Font"
-        android:textColorHighlight="@color/Primary"
-        android:textColorLink="@color/Primary"
-        android:textCursorDrawable="@color/Primary"
-        android:textSize="17sp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@android:color/white"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/quicksand_medium"
-            android:inputType="textPassword"
-            android:textColor="@color/Primary"
-            android:textColorHighlight="@color/Primary"
-            android:textColorHint="@color/Font"
-            android:textColorLink="@color/Primary"
-            android:textCursorDrawable="@color/Primary"
-            android:textSize="20sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/pPhone"
+        android:id="@+id/sPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -130,7 +118,7 @@
         android:textColor="@color/Font"/>
 
     <EditText
-        android:id="@+id/profPhone"
+        android:id="@+id/studPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -143,11 +131,36 @@
         android:textCursorDrawable="@color/Primary"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/sPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Upload Your Photo (.jpg or .png)"
+        android:textSize="17sp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/Font"/>
+
     <Button
-        android:id="@+id/profRegister"
+        android:id="@+id/studPhoto"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="25dp"
+        android:text="Upload"
+        android:textStyle="bold"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@android:color/black"
+        android:background="@color/Primary"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/studRegister"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="25dp"
         android:text="Register"
@@ -156,36 +169,5 @@
         android:textColor="@android:color/black"
         android:background="@color/Primary"
         android:textSize="20sp"/>
-
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="Already Registered?"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Font"/>
-
-        <TextView
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="LOGIN"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
-
-    </LinearLayout>
 
 </LinearLayout>

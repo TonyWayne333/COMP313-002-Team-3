@@ -26,5 +26,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        std.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, Stud_Reg_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
