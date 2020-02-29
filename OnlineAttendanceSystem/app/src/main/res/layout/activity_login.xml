@@ -88,11 +88,10 @@
             android:textColor="@color/Font"/>
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/logEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="21dp"
-
             android:layout_marginEnd="25dp"
             android:fontFamily="@font/quicksand_medium"
             android:hint="@string/email"
@@ -103,7 +102,6 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -123,7 +121,7 @@
             android:layout_marginEnd="25dp">
 
             <EditText
-                android:id="@+id/pass"
+                android:id="@+id/logPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
