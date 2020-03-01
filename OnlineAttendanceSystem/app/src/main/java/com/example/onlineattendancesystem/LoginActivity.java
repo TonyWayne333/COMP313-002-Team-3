@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this,
                                     "User Registered Successfully.",
                                     Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), ViewInfoActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Prof_Home_Activity.class));
                         } else {
                             Toast.makeText(LoginActivity.this,
                                     "Something went wrong." + task.getException().getMessage(),

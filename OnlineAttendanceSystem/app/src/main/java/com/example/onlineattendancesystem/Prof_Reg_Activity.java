@@ -52,7 +52,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
 
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), ViewInfoActivity.class));
+            startActivity(new Intent(getApplicationContext(), Prof_Home_Activity.class));
             finish();
         }
 

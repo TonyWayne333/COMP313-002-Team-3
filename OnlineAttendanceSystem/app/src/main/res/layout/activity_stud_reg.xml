@@ -3,28 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/black"
+    android:orientation="vertical"
     tools:context=".Stud_Reg_Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
-        android:text="Student Registration"
-        android:gravity="center"
-        android:textSize="30sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Primary"/>
+        android:gravity="center"
+        android:text="Student Registration"
+        android:textColor="@color/Primary"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/studId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/id"
@@ -39,8 +39,8 @@
         android:id="@+id/studFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/fName"
@@ -53,8 +53,8 @@
         android:id="@+id/studLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/lName"
@@ -67,8 +67,8 @@
         android:id="@+id/studEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="Email ID"
@@ -83,9 +83,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
-        android:layout_marginTop="10dp"
         android:hint="@string/phone"
         android:inputType="phone"
         android:textColor="@color/Font"
@@ -93,44 +93,56 @@
         android:textCursorDrawable="@color/Primary"
         android:textSize="19sp" />
 
-    <TextView
-        android:id="@+id/sPhoto"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Upload Your Photo (.jpg or .png)"
-        android:textSize="17sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Primary"/>
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/studPhoto"
-        android:layout_width="225dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="15dp"
+        <TextView
+            android:id="@+id/sPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Upload Your Photo"
+            android:textColor="@color/Primary"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/uploadBtn"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@color/Primary"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Choose File"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/studImage"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="25dp"
-        android:text="Choose File"
-        android:textStyle="bold"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@android:color/black"
-        android:background="@color/Primary"
-        android:textSize="20sp"/>
+        android:src="@drawable/common_google_signin_btn_icon_dark" />
 
     <Button
         android:id="@+id/studRegister"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
-        android:text="Register"
-        android:textStyle="bold"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@android:color/black"
         android:background="@color/Primary"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Register"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
