@@ -52,7 +52,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
 
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), Prof_Home_Activity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
         }
 
@@ -149,5 +149,11 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
+    }
+
+    // Prevents user to go back to the previous activity.
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
     }
 }

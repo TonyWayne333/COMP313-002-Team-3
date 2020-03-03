@@ -86,4 +86,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    // Prevents user to go back to the previous activity.
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }

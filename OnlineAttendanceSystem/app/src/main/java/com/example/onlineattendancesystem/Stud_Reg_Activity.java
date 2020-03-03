@@ -15,7 +15,6 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,11 +28,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +48,7 @@ public class Stud_Reg_Activity extends AppCompatActivity {
     EditText sId, sFirstName, sLastName, sEmail, sPhone;
     Button sRegister, chooseImage;
     ImageView studentImage;
-    String studId;
+    String studId, studFName, studLName;
 
     FirebaseDatabase database;
     FirebaseAuth firebaseAuth;
@@ -125,7 +123,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                 firebaseAuth.createUserWithEmailAndPassword(email, studentId).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         if (uploadTask != null && uploadTask.isInProgress()) {
                             Toast.makeText(Stud_Reg_Activity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
                         } else {
@@ -156,7 +153,7 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                             reference.set(student).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d("TAG", "onSuccess: User Profile is created for Professor ID: " + studId);
+                                    Log.d("TAG", "onSuccess: User Profile is created for Student ID: " + studId);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -166,7 +163,15 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                             });
 
                             // Start the Register activity.
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            Intent i = new Intent(Stud_Reg_Activity.this, ThankYouActivity.class);
+
+                            studFName = sFirstName.getText().toString();
+                            studLName = sLastName.getText().toString();
+
+                            i.putExtra("first name", studFName);
+                            i.putExtra("last name", studLName);
+
+                            startActivity(i);
                         } else {
                             Toast.makeText(Stud_Reg_Activity.this,
                                     "Error occurred." + task.getException().getMessage(),
@@ -201,11 +206,11 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                             databaseRef.child(imageId).setValue(uploadImage);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Stud_Reg_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Stud_Reg_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
 
         } else {
             Toast.makeText(this, "Please Select an Image", Toast.LENGTH_LONG).show();
@@ -231,5 +236,11 @@ public class Stud_Reg_Activity extends AppCompatActivity {
             //Picasso.with(this).load(studImageUri).into(studentImage);
             studentImage.setImageURI(studImageUri);
         }
+    }
+
+    // Prevents user to go back to the previous activity.
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
     }
 }
