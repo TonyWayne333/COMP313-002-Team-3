@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -66,12 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this,
-                                    "User Registered Successfully.",
+                                    "Login Successfully",
                                     Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), Prof_Home_Activity.class));
                         } else {
                             Toast.makeText(LoginActivity.this,
-                                    "Something went wrong." + task.getException().getMessage(),
+                                    "Login Failed. " + task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
                         }
                     }

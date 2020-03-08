@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ThankYouActivity extends AppCompatActivity {
+public class ThankYou_Activity extends AppCompatActivity {
 
     private String studentFirstName, studentLastName;
 

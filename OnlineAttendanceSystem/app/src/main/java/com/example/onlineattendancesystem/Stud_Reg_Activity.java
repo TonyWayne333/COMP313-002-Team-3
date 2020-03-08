@@ -28,10 +28,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -75,6 +75,7 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
 
         storageRef = FirebaseStorage.getInstance().getReference("uploads");
+        //storageRef = FirebaseStorage.getInstance().getReference().child("uploads");
         databaseRef = FirebaseDatabase.getInstance().getReference("uploads");
         databaseRef = database.getReference("student");
 
@@ -131,7 +132,7 @@ public class Stud_Reg_Activity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(Stud_Reg_Activity.this,
-                                    "Student Is Registered Successfully.",
+                                    "Student Registered Successfully.",
                                     Toast.LENGTH_LONG).show();
 
                             // Getting the user ID for the register student.
@@ -163,10 +164,10 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                             });
 
                             // Start the Register activity.
-                            Intent i = new Intent(Stud_Reg_Activity.this, ThankYouActivity.class);
+                            Intent i = new Intent(Stud_Reg_Activity.this, ThankYou_Activity.class);
 
-                            studFName = sFirstName.getText().toString();
-                            studLName = sLastName.getText().toString();
+                            studFName = sFirstName.getText().toString().trim();
+                            studLName = sLastName.getText().toString().trim();
 
                             i.putExtra("first name", studFName);
                             i.putExtra("last name", studLName);
@@ -194,16 +195,28 @@ public class Stud_Reg_Activity extends AppCompatActivity {
     private void uploadImage() {
         if (studImageUri != null) {
             StorageReference imageReference;
-            imageReference = storageRef.child(studImageUri.getLastPathSegment() + "." + getFileExtension(studImageUri));
+            imageReference = storageRef.child(sId.getText().toString().trim() + "." + getFileExtension(studImageUri));
 
             uploadTask = imageReference.putFile(studImageUri).
                     addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Toast.makeText(Stud_Reg_Activity.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                            UploadImage uploadImage = new UploadImage();
-                            String imageId = databaseRef.getKey();
-                            databaseRef.child(imageId).setValue(uploadImage);
+
+                            // Stores student's data in Realtime database
+                            Student student;
+                            student = new Student(
+                                    sId.getText().toString(),
+                                    sFirstName.getText().toString(),
+                                    sLastName.getText().toString(),
+                                    sEmail.getText().toString(),
+                                    sPhone.getText().toString(),
+                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
+
+                            //databaseRef.child("registered_student").push().setValue(student);
+
+                            String imageId = databaseRef.push().getKey();
+                            databaseRef.child(imageId).setValue(student);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override

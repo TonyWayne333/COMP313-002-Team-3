@@ -100,7 +100,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(Prof_Reg_Activity.this,
-                                    "User Registered Successfully.",
+                                    "User Registered Successfully",
                                     Toast.LENGTH_LONG).show();
 
                             // Getting the user ID for the register professor.
@@ -135,7 +135,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         } else {
                             Toast.makeText(Prof_Reg_Activity.this,
-                                    "Error occurred." + task.getException().getMessage(),
+                                    "Error Occurred" + task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
                         }
                     }

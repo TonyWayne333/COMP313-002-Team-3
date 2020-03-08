@@ -90,6 +90,7 @@
         android:inputType="phone"
         android:textColor="@color/Font"
         android:textColorHint="@color/Font"
+        android:maxLength="10"
         android:textCursorDrawable="@color/Primary"
         android:textSize="19sp" />
 
