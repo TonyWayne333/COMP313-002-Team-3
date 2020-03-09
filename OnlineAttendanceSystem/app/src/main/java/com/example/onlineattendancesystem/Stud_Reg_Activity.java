@@ -31,7 +31,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -75,7 +74,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         fireStore = FirebaseFirestore.getInstance();
 
         storageRef = FirebaseStorage.getInstance().getReference("uploads");
-        //storageRef = FirebaseStorage.getInstance().getReference().child("uploads");
         databaseRef = FirebaseDatabase.getInstance().getReference("uploads");
         databaseRef = database.getReference("student");
 
@@ -205,6 +203,7 @@ public class Stud_Reg_Activity extends AppCompatActivity {
 
                             // Stores student's data in Realtime database
                             Student student;
+
                             student = new Student(
                                     sId.getText().toString(),
                                     sFirstName.getText().toString(),
@@ -212,8 +211,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                                     sEmail.getText().toString(),
                                     sPhone.getText().toString(),
                                     taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
-
-                            //databaseRef.child("registered_student").push().setValue(student);
 
                             String imageId = databaseRef.push().getKey();
                             databaseRef.child(imageId).setValue(student);
