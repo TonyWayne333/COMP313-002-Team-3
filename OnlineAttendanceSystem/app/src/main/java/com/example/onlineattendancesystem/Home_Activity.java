@@ -7,30 +7,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity {
+public class Home_Activity extends AppCompatActivity {
 
-    TextView std, prof;
+    TextView professor, student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        std = findViewById(R.id.student);
-        prof = findViewById(R.id.professor);
+        student = findViewById(R.id.student);
+        professor = findViewById(R.id.professor);
 
-        prof.setOnClickListener(new View.OnClickListener() {
+        professor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, Prof_Reg_Activity.class);
+                Intent intent = new Intent(Home_Activity.this, Prof_Reg_Activity.class);
                 startActivity(intent);
             }
         });
 
-        std.setOnClickListener(new View.OnClickListener() {
+        student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, Stud_Reg_Activity.class);
+                Intent intent = new Intent(Home_Activity.this, Stud_Reg_Activity.class);
                 startActivity(intent);
             }
         });

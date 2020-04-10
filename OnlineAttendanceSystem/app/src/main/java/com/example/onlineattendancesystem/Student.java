@@ -3,8 +3,7 @@ package com.example.onlineattendancesystem;
 public class Student {
 
     private String studentId;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
     private String phone;
     private String imageUrl;
@@ -14,44 +13,31 @@ public class Student {
         super();
     }
 
-    public Student(String studentId, String firstName, String lastName, String email, String phone, String imageUrl) {
+    public Student(String studentId, String name, String email, String phone, String imageUrl) {
         this.studentId = studentId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
         this.phone = phone;
         this.imageUrl = imageUrl;
-    //    this.presence = presence;
     }
 
     public String getStudentId() {
-        return this.studentId;
+        return studentId;
     }
-
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public String getName() {
+        return name;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -59,7 +45,6 @@ public class Student {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -67,16 +52,15 @@ public class Student {
     public String getImageUrl() {
         return imageUrl;
     }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
     public String getPresence() {
-        return this.presence;
+        return presence;
     }
-
     public void setPresence(String presence) {
         this.presence = presence;
     }
+
 }

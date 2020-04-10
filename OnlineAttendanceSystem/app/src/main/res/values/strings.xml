@@ -4,8 +4,7 @@
     <string name="email">abc@gmail.com</string>
     <string name="pass">**********</string>
 
-    <string name="fName">First Name</string>
-    <string name="lName">Last Name</string>
+    <string name="fName">Full Name</string>
     <string name="id">Student ID (e.g. 123456789)</string>
     <string name="phone">Phone Number (e.g. 647-123-4567)</string>
 

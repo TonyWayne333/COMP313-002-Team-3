@@ -27,43 +27,19 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:text="First Name"
+        android:text="Full Name"
         android:textSize="17sp"
         android:fontFamily="@font/quicksand_medium"
         android:textColor="@color/Font"/>
 
     <EditText
-        android:id="@+id/profFirstName"
+        android:id="@+id/profName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="25dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/fName"
-        android:textColor="@color/Primary"
-        android:textColorHint="@color/Primary"
-        android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/plName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:text="Last Name"
-        android:textSize="17sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
-
-    <EditText
-        android:id="@+id/profLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/lName"
         android:textColor="@color/Primary"
         android:textColorHint="@color/Primary"
         android:textCursorDrawable="@color/Primary"
@@ -117,7 +93,7 @@
         android:layout_marginEnd="25dp">
 
         <EditText
-            android:id="@+id/profPassword"
+            android:id="@+id/profPwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_medium"
@@ -153,10 +129,11 @@
         android:textColor="@color/Primary"
         android:textColorHint="@color/Primary"
         android:textCursorDrawable="@color/Primary"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:maxLength="10"/>
 
     <Button
-        android:id="@+id/profRegister"
+        android:id="@+id/profReg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -187,7 +164,7 @@
             android:textColor="@color/Font"/>
 
         <TextView
-            android:id="@+id/profLogin"
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"

@@ -50,4 +50,14 @@
         android:background="@color/Primary"
         android:textSize="20sp"/>
 
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/logout"
+        android:background="#000000"/>
+
 </LinearLayout>

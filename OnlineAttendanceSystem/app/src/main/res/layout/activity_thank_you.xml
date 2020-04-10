@@ -6,44 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/black"
-    tools:context=".ThankYou_Activity">
+    tools:context=".Thank_You_Activity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="190dp"
-        android:text="Thank You,"
+        android:layout_marginTop="175dp"
+        android:text="Thank You"
         android:textColor="@color/Primary"
         android:textSize="30sp"
         android:fontFamily="@font/autour_one" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/autour_one"
+        android:gravity="center"
+        android:textColor="#FFDE03"
+        android:textSize="25sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <TextView
-            android:text="Lionel"
-            android:id="@+id/firstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginLeft="75dp"
-            android:fontFamily="@font/autour_one"
-            android:textColor="#FFDE03"
-            android:textSize="25sp" />
-
-        <TextView
-            android:text="Messi"
-            android:id="@+id/lastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginLeft="7dp"
-            android:fontFamily="@font/autour_one"
-            android:textColor="#FFDE03"
-            android:textSize="25sp" />
 
     </LinearLayout>
 

@@ -20,7 +20,7 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/studId"
+        android:id="@+id/studID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -36,7 +36,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/studFirstName"
+        android:id="@+id/studName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -44,20 +44,6 @@
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/fName"
-        android:textColor="@color/Font"
-        android:textColorHint="@color/Font"
-        android:textCursorDrawable="@color/Primary"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/studLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/lName"
         android:textColor="@color/Font"
         android:textColorHint="@color/Font"
         android:textCursorDrawable="@color/Primary"
@@ -111,7 +97,7 @@
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/uploadBtn"
+            android:id="@+id/chooseBtn"
             android:layout_width="150dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
@@ -133,7 +119,7 @@
         android:src="@drawable/common_google_signin_btn_icon_dark" />
 
     <Button
-        android:id="@+id/studRegister"
+        android:id="@+id/studReg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"

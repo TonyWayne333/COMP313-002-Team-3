@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Edit_Profile_Activity"></activity>
-        <activity android:name=".AttendanceActivity" />
-        <activity android:name=".Student_List_Activity" />
-        <activity android:name=".ThankYou_Activity" />
+        <activity android:name=".Update_Profile_Activity" />
+        <activity android:name=".Thank_You_Activity" />
+        <activity android:name=".Stud_List_Activity" />
         <activity android:name=".Prof_Home_Activity" />
         <activity android:name=".Stud_Reg_Activity" />
         <activity android:name=".Prof_Reg_Activity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login_Activity" />
+        <activity android:name=".Home_Activity" />
+        <activity android:name=".Main_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

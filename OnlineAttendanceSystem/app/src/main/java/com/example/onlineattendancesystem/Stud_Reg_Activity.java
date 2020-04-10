@@ -1,7 +1,6 @@
 package com.example.onlineattendancesystem;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
@@ -25,6 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -38,44 +38,131 @@ import java.util.Map;
 public class Stud_Reg_Activity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private Uri studImageUri;
+    private Uri imageUri;
 
-    private StorageReference storageRef;
-    private DatabaseReference databaseRef;
-    private StorageTask uploadTask;
-
-    EditText sId, sFirstName, sLastName, sEmail, sPhone;
-    Button sRegister, chooseImage;
+    EditText sId, sName, sEmail, sPhone;
+    Button registerBtn, chooseImage;
     ImageView studentImage;
-    String studId, studFName, studLName;
 
-    FirebaseDatabase database;
+    StorageReference storageReference;
+    DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fireStore;
+    StorageTask uploadTask;
+
+    String studId, studName;
+    Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stud_reg);
 
-        sId = findViewById(R.id.studId);
-        sFirstName = findViewById(R.id.studFirstName);
-        sLastName = findViewById(R.id.studLastName);
+        sId = findViewById(R.id.studID);
+        sName = findViewById(R.id.studName);
         sEmail = findViewById(R.id.studEmail);
         sPhone = findViewById(R.id.studPhone);
-
-        chooseImage = findViewById(R.id.uploadBtn);
         studentImage = findViewById(R.id.studImage);
 
-        sRegister = findViewById(R.id.studRegister);
+        registerBtn = findViewById(R.id.studReg);
+        chooseImage = findViewById(R.id.chooseBtn);
 
-        database = FirebaseDatabase.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Student");
+        storageReference = FirebaseStorage.getInstance().getReference("Student");
+
         firebaseAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
 
-        storageRef = FirebaseStorage.getInstance().getReference("uploads");
-        databaseRef = FirebaseDatabase.getInstance().getReference("uploads");
-        databaseRef = database.getReference("student");
+        student = new Student();
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final String id = sId.getText().toString().trim();
+                final String name = sName.getText().toString().trim();
+                final String email = sEmail.getText().toString().trim();
+                final String phone = sPhone.getText().toString().trim();
+
+                if (TextUtils.isEmpty(id)) {
+                    sId.setError("Please Enter Student ID.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(name)) {
+                    sName.setError("Please Enter Full Name.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(email)) {
+                    sEmail.setError("Please Enter Valid Email Address.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(phone)) {
+                    sPhone.setError("Please Enter Phone Number.");
+                    return;
+                }
+
+                firebaseAuth.createUserWithEmailAndPassword(email, id)
+                        .addOnCompleteListener(Stud_Reg_Activity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (uploadTask != null && uploadTask.isInProgress()) {
+                                    Toast.makeText(Stud_Reg_Activity.this,
+                                            "Upload in progress",
+                                            Toast.LENGTH_LONG).show();
+                                } else {
+                                    uploadImage();
+                                }
+
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(Stud_Reg_Activity.this,
+                                            "You are Successfully Registered.",
+                                            Toast.LENGTH_LONG).show();
+
+                                    // Getting the user ID for the register student.
+                                    studId = firebaseAuth.getCurrentUser().getUid();
+
+                                    // Storing the data into collection.
+                                    DocumentReference reference = fireStore.collection("Student").document(studId);
+
+                                    // HashMap will store the data in (key, data) format.
+                                    Map<String, Object> student = new HashMap<>();
+
+                                    // Inserting Data into HashMap.
+                                    student.put("Student ID", id);
+                                    student.put("Student Name", name);
+                                    student.put("Email ID", email);
+                                    student.put("Phone Number", phone);
+
+                                    reference.set(student).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("TAG", "onSuccess: User Profile is created for Student ID: " + studId);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d("TAG", "onFailure: Error Occurred !" + e.toString());
+                                        }
+                                    });
+
+                                    Intent i = new Intent(Stud_Reg_Activity.this, Thank_You_Activity.class);
+
+                                    studName = sName.getText().toString().trim();
+                                    i.putExtra("name", studName);
+
+                                    startActivity(i);
+                                } else {
+                                    Toast.makeText(Stud_Reg_Activity.this,
+                                            "Error Occurred !" + task.getException().getMessage(),
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            }
+        });
 
         chooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,103 +170,62 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                 openFileChooser();
             }
         });
+    }
 
-        sRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String studentId = sId.getText().toString().trim();
-                String firstName = sFirstName.getText().toString().trim();
-                String lastName = sLastName.getText().toString().trim();
-                String email = sEmail.getText().toString().trim();
-                String phone = sPhone.getText().toString().trim();
+    // Used to upload the selected image using openFileChooser() method.
+    private void uploadImage() {
+        if (imageUri != null) {
+            final StorageReference imageReference;
+            imageReference = storageReference.child(sId.getText().toString().trim() + "." + getFileExtension(imageUri));
 
-                if (TextUtils.isEmpty(studentId)) {
-                    sId.setError("This field is required!!");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(firstName)) {
-                    sFirstName.setError("This field is required!!");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(lastName)) {
-                    sLastName.setError("This field is required!!");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(email)) {
-                    sEmail.setError("This field is required!!");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(phone)) {
-                    sPhone.setError("This field is required!!");
-                    return;
-                }
-
-                // Register Professor in FireBase
-                firebaseAuth.createUserWithEmailAndPassword(email, studentId).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (uploadTask != null && uploadTask.isInProgress()) {
-                            Toast.makeText(Stud_Reg_Activity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
-                        } else {
-                            uploadImage();
-                        }
-
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Stud_Reg_Activity.this,
-                                    "Student Registered Successfully.",
-                                    Toast.LENGTH_LONG).show();
-
-                            // Getting the user ID for the register student.
-                            studId = firebaseAuth.getCurrentUser().getUid();
-
-                            // Storing the data into collection.
-                            DocumentReference reference = fireStore.collection("student").document(studId);
-
-                            // HashMap will store the data in (key, data) format.
-                            Map<String, Object> student = new HashMap<>();
-
-                            // Inserting Data into HashMap.
-                            student.put("Student ID", studentId);
-                            student.put("First Name", firstName);
-                            student.put("Last Name", lastName);
-                            student.put("Email ID", email);
-                            student.put("Phone Number", phone);
-
-                            reference.set(student).addOnSuccessListener(new OnSuccessListener<Void>() {
+            uploadTask = imageReference.putFile(imageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(getApplicationContext(), "Image Uploaded Successfully", Toast.LENGTH_LONG).show();
+                            imageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d("TAG", "onSuccess: User Profile is created for Student ID: " + studId);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d("TAG", "onFailure: " + e.toString());
+                                public void onSuccess(Uri uri) {
+                                    String imageUrl = uri.toString();
+                                    Student student = new Student(
+                                            sId.getText().toString(),
+                                            sName.getText().toString(),
+                                            sEmail.getText().toString(),
+                                            sPhone.getText().toString(),
+                                            imageUrl
+                                    );
+                                    String imageId = databaseReference.push().getKey();
+                                    databaseReference.child(imageId).setValue(student);
                                 }
                             });
-
-                            // Start the Register activity.
-                            Intent i = new Intent(Stud_Reg_Activity.this, ThankYou_Activity.class);
-
-                            studFName = sFirstName.getText().toString().trim();
-                            studLName = sLastName.getText().toString().trim();
-
-                            i.putExtra("first name", studFName);
-                            i.putExtra("last name", studLName);
-
-                            startActivity(i);
-                        } else {
-                            Toast.makeText(Stud_Reg_Activity.this,
-                                    "Error occurred." + task.getException().getMessage(),
-                                    Toast.LENGTH_LONG).show();
                         }
-                    }
-                });
-            }
-        });
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Stud_Reg_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "Please Select an Image", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            imageUri = data.getData();
+            studentImage.setImageURI(imageUri);
+        }
+    }
+
+    // Used to select image from the user's storage.
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select an Image"), PICK_IMAGE_REQUEST);
     }
 
     // This method is used to get the extension(.jpeg, .jpg, .png) from our selected image.
@@ -189,68 +235,4 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         return mimeType.getExtensionFromMimeType(resolver.getType(uri));
     }
 
-    // Used to upload the selected image using openFileChooser() method.
-    private void uploadImage() {
-        if (studImageUri != null) {
-            StorageReference imageReference;
-            imageReference = storageRef.child(sId.getText().toString().trim() + "." + getFileExtension(studImageUri));
-
-            uploadTask = imageReference.putFile(studImageUri).
-                    addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(Stud_Reg_Activity.this, "Upload Successful", Toast.LENGTH_LONG).show();
-
-                            // Stores student's data in Realtime database
-                            Student student;
-
-                            student = new Student(
-                                    sId.getText().toString(),
-                                    sFirstName.getText().toString(),
-                                    sLastName.getText().toString(),
-                                    sEmail.getText().toString(),
-                                    sPhone.getText().toString(),
-                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
-
-                            String imageId = databaseRef.push().getKey();
-                            databaseRef.child(imageId).setValue(student);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Stud_Reg_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        } else {
-            Toast.makeText(this, "Please Select an Image", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    // Used to select image from the user's storage.
-    private void openFileChooser() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null) {
-            studImageUri = data.getData();
-
-            //Picasso.with(this).load(studImageUri).into(studentImage);
-            studentImage.setImageURI(studImageUri);
-        }
-    }
-
-    // Prevents user to go back to the previous activity.
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(false);
-    }
 }
