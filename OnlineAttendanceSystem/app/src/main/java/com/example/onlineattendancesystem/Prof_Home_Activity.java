@@ -35,7 +35,7 @@ public class Prof_Home_Activity extends AppCompatActivity {
         attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Stud_List_Activity.class));
+                startActivity(new Intent(getApplicationContext(), Take_Attd_Activity.class));
             }
         });
 
