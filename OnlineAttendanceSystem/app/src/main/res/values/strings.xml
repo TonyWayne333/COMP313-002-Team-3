@@ -6,7 +6,7 @@
 
     <string name="fName">Full Name</string>
     <string name="id">Student ID (e.g. 123456789)</string>
-    <string name="phone">Phone Number (e.g. 647-123-4567)</string>
+    <string name="phone">Phone (e.g. 647-123-4567)</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

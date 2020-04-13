@@ -11,20 +11,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="175dp"
-        android:text="Welcome To"
+        android:text="Welcome To Online Attendance System"
         android:textColor="@color/Primary"
-        android:textSize="20sp"
-        android:fontFamily="@font/autour_one" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="OAS"
-        android:textColor="@color/Primary"
-        android:textSize="35sp"
+        android:textSize="23sp"
         android:fontFamily="@font/autour_one" />
 
     <ImageView

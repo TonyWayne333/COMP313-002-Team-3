@@ -72,7 +72,7 @@
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="270dp"
         android:orientation="vertical">
 
         <TextView
@@ -82,7 +82,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:text="Email"
+            android:text="Email ID"
             android:textSize="20sp"
             android:fontFamily="@font/quicksand_medium"
             android:textColor="@color/Font"/>
@@ -97,14 +97,14 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColor="@color/Primary"
-            android:textColorHint="@color/Primary"
+            android:textColorHint="#AEA4A4"
             android:textCursorDrawable="@color/Primary"
             android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:text="Password"
@@ -114,7 +114,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@android:color/white"
+            app:passwordToggleTint="#AEA4A4"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="25dp"
@@ -133,23 +133,11 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/forgotPwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_gravity="right"
-            android:text="Forgot Password ?"
-            android:textSize="17sp"
-            android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Font"/>
-
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="21dp"
             android:layout_marginEnd="25dp"
             android:text="Login"
@@ -165,16 +153,15 @@
         android:id="@+id/linear2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:text="New user?"
+            android:layout_marginStart="25dp"
+            android:text="Don't have an account?"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
             android:textColor="@color/Font"/>
 
@@ -182,13 +169,23 @@
             android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             android:text="SIGNUP"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
             android:textColor="@color/Primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="here."
+            android:gravity="center"
+            android:textSize="17sp"
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="@color/Font"/>
 
     </LinearLayout>
 

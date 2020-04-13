@@ -12,16 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Select Your Profile"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/autour_one"
+        android:text="Please select your role"
         android:textColor="@color/Primary"
-        android:textSize="29sp"
-        android:fontFamily="@font/autour_one" />
+        android:textSize="23sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp">
 
@@ -41,9 +41,9 @@
             android:layout_height="wrap_content"
             android:text="Student"
             android:layout_marginTop="95dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="30dp"
             android:textColor="@color/Primary"
-            android:textSize="30sp"
+            android:textSize="27sp"
             android:fontFamily="@font/autour_one" />
 
     </LinearLayout>
@@ -58,7 +58,7 @@
             android:drawableStart="@drawable/professor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="25dp"
             android:textColor="@android:color/white"
             android:textSize="30sp"
@@ -69,10 +69,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Professor"
-            android:layout_marginTop="65dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="20dp"
             android:textColor="@color/Primary"
-            android:textSize="30sp"
+            android:textSize="27sp"
             android:fontFamily="@font/autour_one" />
 
     </LinearLayout>

@@ -35,7 +35,6 @@ public class Login_Activity extends AppCompatActivity {
         loginBtn = findViewById(R.id.login);
 
         txtSignup = findViewById(R.id.signup);
-        forgotPass = findViewById(R.id.forgotPwd);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

@@ -42,9 +42,9 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="You have been successfully registered to our system."
+        android:text="You are successfully registered."
         android:textColor="@color/Primary"
-        android:textSize="20sp"
+        android:textSize="23sp"
         android:fontFamily="@font/autour_one" />
 
     <Button

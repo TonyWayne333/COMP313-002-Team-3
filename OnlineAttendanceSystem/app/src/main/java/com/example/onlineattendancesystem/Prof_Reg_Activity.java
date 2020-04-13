@@ -56,7 +56,8 @@ public class Prof_Reg_Activity extends AppCompatActivity {
         registerBtn = findViewById(R.id.profReg);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Professor");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Professor_Registration");
+        //databaseReference = firebaseDatabase.getReference("Professor");
 
         firebaseAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
