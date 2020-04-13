@@ -121,16 +121,12 @@ public class Stud_Reg_Activity extends AppCompatActivity {
                                             "You are Successfully Registered.",
                                             Toast.LENGTH_LONG).show();
 
-                                    // Getting the user ID for the register student.
                                     studId = firebaseAuth.getCurrentUser().getUid();
 
-                                    // Storing the data into collection.
                                     DocumentReference reference = fireStore.collection("Student").document(studId);
 
-                                    // HashMap will store the data in (key, data) format.
                                     Map<String, Object> student = new HashMap<>();
 
-                                    // Inserting Data into HashMap.
                                     student.put("Student ID", id);
                                     student.put("Student Name", name);
                                     student.put("Email ID", email);
@@ -172,7 +168,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         });
     }
 
-    // Used to upload the selected image using openFileChooser() method.
     private void uploadImage() {
         if (imageUri != null) {
             final StorageReference imageReference;
@@ -220,7 +215,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         }
     }
 
-    // Used to select image from the user's storage.
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -228,7 +222,6 @@ public class Stud_Reg_Activity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select an Image"), PICK_IMAGE_REQUEST);
     }
 
-    // This method is used to get the extension(.jpeg, .jpg, .png) from our selected image.
     private String getFileExtension(Uri uri) {
         ContentResolver resolver = getContentResolver();
         MimeTypeMap mimeType = MimeTypeMap.getSingleton();

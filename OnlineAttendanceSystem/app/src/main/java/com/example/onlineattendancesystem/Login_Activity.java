@@ -58,7 +58,6 @@ public class Login_Activity extends AppCompatActivity {
                     logPassword.setError("Password must be greater than or equal to 8 characters.");
                 }
 
-                // Login User in FireBase
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -85,7 +84,6 @@ public class Login_Activity extends AppCompatActivity {
         });
     }
 
-    // Prevents user to go back to the previous activity.
     @Override
     public void onBackPressed() {
         moveTaskToBack(false);

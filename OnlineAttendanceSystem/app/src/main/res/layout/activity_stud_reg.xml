@@ -115,8 +115,7 @@
         android:id="@+id/studImage"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
+        android:layout_marginStart="20dp" />
 
     <Button
         android:id="@+id/studReg"

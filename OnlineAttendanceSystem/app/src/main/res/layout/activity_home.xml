@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/black"
+    android:orientation="vertical"
     tools:context=".Home_Activity">
 
     <TextView
@@ -21,30 +20,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp">
 
         <TextView
-            android:drawableStart="@drawable/student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="80dp"
+            android:drawableStart="@drawable/student"
+            android:fontFamily="@font/autour_one"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:fontFamily="@font/autour_one" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Student"
-            android:layout_marginTop="95dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="95dp"
+            android:fontFamily="@font/autour_one"
+            android:text="Student"
             android:textColor="@color/Primary"
-            android:textSize="27sp"
-            android:fontFamily="@font/autour_one" />
+            android:textSize="27sp" />
 
     </LinearLayout>
 
@@ -55,25 +54,25 @@
         android:layout_marginEnd="25dp">
 
         <TextView
-            android:drawableStart="@drawable/professor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/professor"
+            android:fontFamily="@font/autour_one"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:fontFamily="@font/autour_one" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/professor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Professor"
-            android:layout_marginTop="35dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/autour_one"
+            android:text="Professor"
             android:textColor="@color/Primary"
-            android:textSize="27sp"
-            android:fontFamily="@font/autour_one" />
+            android:textSize="27sp" />
 
     </LinearLayout>
 

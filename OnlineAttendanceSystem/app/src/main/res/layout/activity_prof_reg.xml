@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@android:color/black"
+    android:orientation="vertical"
     tools:context=".Prof_Reg_Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
-        android:text="Sign Up"
-        android:gravity="center"
-        android:textSize="27sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Primary"/>
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textColor="@color/Primary"
+        android:textSize="27sp" />
 
     <TextView
         android:id="@+id/pfName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Full Name"
-        android:textSize="17sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:text="Full Name"
+        android:textColor="@color/Font"
+        android:textSize="17sp" />
 
     <EditText
         android:id="@+id/profName"
@@ -52,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:text="Email"
-        android:textSize="17sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:text="Email"
+        android:textColor="@color/Font"
+        android:textSize="17sp" />
 
     <EditText
         android:id="@+id/profEmail"
@@ -86,12 +85,12 @@
         android:textSize="17sp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#AEA4A4"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp">
+        android:layout_marginEnd="25dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#AEA4A4">
 
         <EditText
             android:id="@+id/profPwd"
@@ -113,10 +112,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:text="Phone"
-        android:textSize="17sp"
         android:fontFamily="@font/quicksand_medium"
-        android:textColor="@color/Font"/>
+        android:text="Phone"
+        android:textColor="@color/Font"
+        android:textSize="17sp" />
 
     <EditText
         android:id="@+id/profPhone"
@@ -127,25 +126,25 @@
         android:fontFamily="@font/quicksand_medium"
         android:hint="@string/phone"
         android:inputType="phone"
+        android:maxLength="10"
         android:textColor="@color/Primary"
         android:textColorHint="#AEA4A4"
         android:textCursorDrawable="@color/Primary"
-        android:textSize="18sp"
-        android:maxLength="10"/>
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/profReg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="23dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
-        android:text="Sign Up"
-        android:textStyle="bold"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@android:color/black"
         android:background="@color/Primary"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Sign Up"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/linear2"
@@ -158,33 +157,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
-            android:text="Already have an account?"
-            android:gravity="center"
-            android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Font"/>
+            android:gravity="center"
+            android:text="Already have an account?"
+            android:textColor="@color/Font"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="LOGIN"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Primary"/>
+            android:gravity="center"
+            android:text="LOGIN"
+            android:textColor="@color/Primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="here."
-            android:gravity="center"
-            android:textSize="17sp"
             android:fontFamily="@font/quicksand_medium"
-            android:textColor="@color/Font"/>
+            android:gravity="center"
+            android:text="here."
+            android:textColor="@color/Font"
+            android:textSize="17sp" />
 
     </LinearLayout>
 

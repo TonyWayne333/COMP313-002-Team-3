@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/black"
+    android:orientation="vertical"
     tools:context=".Thank_You_Activity">
 
     <TextView
@@ -13,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="175dp"
+        android:fontFamily="@font/autour_one"
         android:text="Thank You"
         android:textColor="@color/Primary"
-        android:textSize="30sp"
-        android:fontFamily="@font/autour_one" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/studentName"
@@ -39,27 +38,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/autour_one"
         android:gravity="center"
         android:text="You are successfully registered."
         android:textColor="@color/Primary"
-        android:textSize="23sp"
-        android:fontFamily="@font/autour_one" />
+        android:textSize="23sp" />
 
     <Button
         android:id="@+id/exit"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="25dp"
         android:layout_gravity="center"
-        android:text="Exit"
-        android:textStyle="bold"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@android:color/black"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
         android:background="@color/Primary"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Exit"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

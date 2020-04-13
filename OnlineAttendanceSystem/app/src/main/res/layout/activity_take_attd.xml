@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/black"
     tools:context=".Take_Attd_Activity">
 
     <LinearLayout
@@ -16,8 +16,8 @@
             android:id="@+id/galleryBtn"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
             android:background="@color/Primary"
             android:fontFamily="@font/quicksand_medium"
             android:text="Choose File"
@@ -29,8 +29,8 @@
             android:id="@+id/cameraBtn"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
             android:background="@color/Primary"
             android:fontFamily="@font/quicksand_medium"
@@ -46,34 +46,36 @@
         android:layout_width="325dp"
         android:layout_height="325dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
+        android:layout_marginEnd="20dp" />
 
     <EditText
         android:id="@+id/imgName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:gravity="center"
         android:hint="Enter File Name "
         android:textSize="20sp"
-        android:fontFamily="@font/quicksand_medium"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginEnd="25dp"
-        android:gravity="center"/>
+        android:textColor="@color/Primary"
+        android:textColorHint="#AEA4A4"
+        android:textCursorDrawable="@color/Primary"/>
 
     <Button
         android:id="@+id/uploadImg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="23dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Upload Image"
-        android:textStyle="bold"
-        android:fontFamily="@font/quicksand_medium"
-        android:textColor="@android:color/black"
         android:background="@color/Primary"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/quicksand_medium"
+        android:text="Upload Image"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

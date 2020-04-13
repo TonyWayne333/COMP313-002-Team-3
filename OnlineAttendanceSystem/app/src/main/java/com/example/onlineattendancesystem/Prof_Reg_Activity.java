@@ -107,16 +107,12 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                                             "You are Successfully Registered.",
                                             Toast.LENGTH_LONG).show();
 
-                                    // Getting the user ID for the register student.
                                     profId = firebaseAuth.getCurrentUser().getUid();
 
-                                    // Storing the data into collection.
                                     DocumentReference reference = fireStore.collection("Professor").document(profId);
 
-                                    // HashMap will store the data in (key, data) format.
                                     Map<String, Object> professor = new HashMap<>();
 
-                                    // Inserting Data into HashMap.
                                     professor.put("Professor Name", name);
                                     professor.put("Email ID", email);
                                     professor.put("Password", password);
@@ -134,7 +130,6 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                                         }
                                     });
 
-                                    // Start the Register activity.
                                     Intent i = new Intent(Prof_Reg_Activity.this, Login_Activity.class);
                                     startActivity(i);
                                 } else {
@@ -154,13 +149,5 @@ public class Prof_Reg_Activity extends AppCompatActivity {
             }
         });
     }
-
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        if (firebaseAuth.getCurrentUser() != null) {
-
-        }
-    }*/
 
 }
