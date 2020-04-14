@@ -72,7 +72,6 @@ public class Take_Attd_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 askCameraPermission();
-                //openCamera();
             }
         });
 
