@@ -51,7 +51,7 @@ public class Prof_Home_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 finish();
-                startActivity(new Intent(getApplicationContext(), Home_Activity.class));
+                startActivity(new Intent(getApplicationContext(), Login_Activity.class));
             }
         });
     }

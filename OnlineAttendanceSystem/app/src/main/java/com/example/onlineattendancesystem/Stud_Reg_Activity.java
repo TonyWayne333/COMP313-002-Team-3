@@ -44,10 +44,10 @@ public class Stud_Reg_Activity extends AppCompatActivity {
     Button registerBtn, chooseImage;
     ImageView studentImage;
 
-    StorageReference storageReference;
-    DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fireStore;
+    DatabaseReference databaseReference;
+    StorageReference storageReference;
     StorageTask uploadTask;
 
     String studId, studName;

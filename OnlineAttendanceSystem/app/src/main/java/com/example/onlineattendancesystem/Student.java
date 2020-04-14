@@ -24,6 +24,7 @@ public class Student {
     public String getStudentId() {
         return studentId;
     }
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
@@ -31,6 +32,7 @@ public class Student {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,6 +40,7 @@ public class Student {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -45,6 +48,7 @@ public class Student {
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -52,6 +56,7 @@ public class Student {
     public String getImageUrl() {
         return imageUrl;
     }
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -59,6 +64,7 @@ public class Student {
     public String getPresence() {
         return presence;
     }
+
     public void setPresence(String presence) {
         this.presence = presence;
     }

@@ -33,10 +33,9 @@ public class Prof_Reg_Activity extends AppCompatActivity {
     Button registerBtn;
     TextView loginLink;
 
-    DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fireStore;
-    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     String profId;
     Professor professor;
@@ -55,9 +54,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
 
         registerBtn = findViewById(R.id.profReg);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Professor_Registration");
-        //databaseReference = firebaseDatabase.getReference("Professor");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Professor");
 
         firebaseAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
@@ -107,6 +104,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                                             "You are Successfully Registered.",
                                             Toast.LENGTH_LONG).show();
 
+                                    //profId = firebaseAuth.getCurrentUser().getUid();
                                     profId = firebaseAuth.getCurrentUser().getUid();
 
                                     DocumentReference reference = fireStore.collection("Professor").document(profId);
@@ -121,6 +119,9 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                                     reference.set(professor).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
+                                            Professor professorData = new Professor(name, email, password, phone);
+                                            String professorId = databaseReference.push().getKey();
+                                            databaseReference.child(professorId).setValue(professorData);
                                             Log.d("TAG", "onSuccess: User Profile is created for Professor ID: " + profId);
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
@@ -134,7 +135,7 @@ public class Prof_Reg_Activity extends AppCompatActivity {
                                     startActivity(i);
                                 } else {
                                     Toast.makeText(Prof_Reg_Activity.this,
-                                            "Error Occurred" + task.getException().getMessage(),
+                                            "Error Occurred. " + task.getException().getMessage(),
                                             Toast.LENGTH_LONG).show();
                                 }
                             }
